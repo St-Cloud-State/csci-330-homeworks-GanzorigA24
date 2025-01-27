@@ -1,0 +1,34 @@
+Script started on 2025-01-27 04:38:11+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="160" LINES="11"]
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24 [0;36m([1;31mmain[0;36m) [0m$ Sbcl[K[K[K[Ksbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* ;; q Question 3. 
+(CAR (CDR (CDR '(a b x d))))
+
+X
+* (CAR (CAR (CDR (CAR (CDR '(a (b (x d))))))))
+
+X
+* (CAR (CDR (CAR (CDR (CAR (CAR '(((a (b (x) d))))))))))
+
+(X)
+* Question        ''  ::  ""  ;; Question 4. 
+(cons 'a (cons 'b (cons 'x (cons 'd nil))))
+
+(A B X D)
+* (cons 'a (cons (cons 'b (cons (cons 'x (cons 'd nil)) nil)) nil))
+
+(A (B (X D)))
+* (cons (cons (cons 'a (cons (cons 'b (cons (cons 'x nil) (cons 'd nil))) nil)) nil) nil)
+
+(((A (B (X) D))))
+* (quit)
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24 [0;36m([1;31mmain[0;36m) [0m$ eq[Kxit
+exit
+
+Script done on 2025-01-27 04:40:22+00:00 [COMMAND_EXIT_CODE="0"]
