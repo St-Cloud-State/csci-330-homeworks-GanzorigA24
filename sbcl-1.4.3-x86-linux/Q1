@@ -1,0 +1,177 @@
+Script started on 2025-02-04 02:07:29+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="160" LINES="11"]
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/sbcl-1.4.3-x86-linux [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (NOT (EQUAL 3 (ABS -3)))  
+
+NIL
+* (/(+8    + 8      . (/ (+ 8 12) 2)^[[D^[[D^[[D^[[D^[[D^[[D^A^A                                            (/ (+ 8 12) 2)
+
+10
+* (+ (* 3 3) (* 4 4))
+
+25
+* (defun miles-per-gallon(initial-odometer-reading final-odometer-reading gallons-consumed) (/ ( - final-odometer-reading initial-odometer-reading) gallons-consumed))
+
+MILES-PER-GALLON
+* ;t Test1
+(miles-per-gallon 100 150 5)
+
+10
+* (third (the quick brown fox)) 
+; in: THIRD (THE QUICK BROWN FOX)
+;     (THE QUICK BROWN FOX)
+; 
+; caught ERROR:
+;   error while parsing arguments to special operator THE:
+;     too many elements in
+;       (QUICK BROWN FOX)
+;     to satisfy lambda list
+;       (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+;     exactly 2 expected, but got 3
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+
+debugger invoked on a SB-INT:COMPILED-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Execution of a form compiled with errors.
+Form:
+  (THE QUICK BROWN FOX)
+Compile-time error:
+  error while parsing arguments to special operator THE:
+  too many elements in
+    (QUICK BROWN FOX)
+  to satisfy lambda list
+    (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+  exactly 2 expected, but got 3
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (THE QUICK BROWN FOX)
+0] ;   ^X  ^C
+
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Interactive interrupt at #xF7FCF579.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Reduce debugger level (to debug level 1).
+  2:            Exit debugger, returning to top level.
+
+("bogus stack frame")
+0[2] (third (the quick brown fox))                               *;Correction
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+10
+0[2] z EVSAL
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable EVSAL is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT   ] Reduce debugger level (to debug level 2).
+  1: [CONTINUE] Return from SB-UNIX:SIGINT.
+  2:            Reduce debugger level (to debug level 1).
+  3:            Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV EVSAL #<NULL-LEXENV>)
+0[3] z EVAL
+; in:
+;     (PROGN EVAL)
+; 
+; caught WARNING:
+;   undefined variable: EVAL
+; 
+; compilation unit finished
+;   Undefined variable:
+;     EVAL
+;   caught 1 WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable EVAL is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT   ] Reduce debugger level (to debug level 3).
+  1:            Reduce debugger level (to debug level 2).
+  2: [CONTINUE] Return from SB-UNIX:SIGINT.
+  3:            Reduce debugger level (to debug level 1).
+  4:            Exit debugger, returning to top level.
+
+((LAMBDA (#:G389)) #<unused argument>)
+   source: (PROGN EVAL)
+0[4] ^C
+
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Interactive interrupt at #xF7FCF579.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Reduce debugger level (to debug level 4).
+  2:            Reduce debugger level (to debug level 3).
+  3:            Reduce debugger level (to debug level 2).
+  4:            Return from SB-UNIX:SIGINT.
+  5:            Reduce debugger level (to debug level 1).
+  6:            Exit debugger, returning to top level.
+
+("bogus stack frame")
+0[5] ^C
+
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Interactive interrupt at #xF7FCF579.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Reduce debugger level (to debug level 5).
+  2:            Return from SB-UNIX:SIGINT.
+  3:            Reduce debugger level (to debug level 4).
+  4:            Reduce debugger level (to debug level 3).
+  5:            Reduce debugger level (to debug level 2).
+  6:            Return from SB-UNIX:SIGINT.
+  7:            Reduce debugger level (to debug level 1).
+  8:            Exit debugger, returning to top level.
+
+("bogus stack frame")
+0[6] ^X  ^Z
+[1]+  Stopped                 sbcl
+[0;32m@GanzorigA24 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/sbcl-1.4.3-x86-linux [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* ^Z
+[2]+  Stopped                 sbcl
+[0;32m@GanzorigA24 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/sbcl-1.4.3-x86-linux [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+There are stopped jobs.
+[0;32m@GanzorigA24 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/sbcl-1.4.3-x86-linux [0;36m([1;31mmain[0;36m) [0m$ exo\[K[Kit
+exit
+
+Script done on 2025-02-04 02:31:50+00:00 [COMMAND_EXIT_CODE="1"]
