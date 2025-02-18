@@ -1,0 +1,30 @@
+Script started on 2025-02-18 20:05:36+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="68" LINES="11"]
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* load    (load "insrr  ertionSort.lisp")
+
+T
+* (insertion-sort '(5 3 8 1 2 7 4 6))
+
+(1 2 3 4 5 6 7 8)
+* (load "insertionSort.lisp")
+
+T
+* (insertion-sort '(2 8 9 7 6 5 3))
+
+(2 3 5 6 7 8 9)
+* exi   ^Z
+[1]+  Stopped                 sbcl
+[0;32m@GanzorigA24 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+There are stopped jobs.
+[0;32m@GanzorigA24 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-18 20:06:50+00:00 [COMMAND_EXIT_CODE="1"]

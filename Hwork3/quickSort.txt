@@ -1,0 +1,73 @@
+Script started on 2025-02-18 19:08:29+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="95" LINES="11"]
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24 [0;36m([1;31mmain[0;36m) [0m$ g+=[K+ quickSoert[K[K[Krt.cpp
+[01m[Kg++:[m[K [01;31m[Kerror: [m[KquickSort.cpp: No such file or directory
+[01m[Kg++:[m[K [01;31m[Kfatal error: [m[Kno input files
+compilation terminated.
+[0;32m@GanzorigA24 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24 [0;36m([1;31mmain[0;36m) [0m$ cd Hwr[Kork3
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ cd Hwork3g++ quickSort.cpp
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ./a.out
+Sorted array: 1 5 7 8 9 10 [0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ./a.outg++ quickSort.cpp
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ./.aou[K[K[K[K.[Ka.out
+Sorted array: 1 1 4 7 8 9 [0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ./a.outg++ quickSort.cpp
+[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ g++ quickSort.cpp[10P./a.out
+Sorted array: 1 2 6 8 9 10 [0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ cat quicks[KSort.cpp
+#include <iostream>
+#include <stack>
+#include <vector>
+using namespace std;
+
+// Partition function
+int partition(vector<int>& arr, int low, int high) {
+    int pivot = arr[high]; // Choose the last element as the pivot
+    int i = low - 1;       // Index of the smaller element
+
+    // Traverse the array and rearrange elements
+    for (int j = low; j < high; j++) {
+        if (arr[j] < pivot) {
+            i++; // Increment the index of the smaller element
+            swap(arr[i], arr[j]); // Swap arr[i] and arr[j]
+        }
+    }
+    // Place the pivot in the correct position
+    swap(arr[i + 1], arr[high]);
+    return i + 1; // Return the partition index
+}
+
+// Iterative Quicksort
+void quicksort(vector<int>& arr, int low, int high) {
+    stack<int> stk; // Use a stack to simulate recursion
+    stk.push(low);  // Push the initial low index
+    stk.push(high); // Push the initial high index
+
+    // Continue until the stack is empty
+    while (!stk.empty()) {
+        high = stk.top(); stk.pop(); // Pop the high index
+        low = stk.top(); stk.pop();  // Pop the low index
+
+        int p = partition(arr, low, high); // Partition the array
+
+        // If there are elements on the left side of the pivot, push them to the stack
+        if (p - 1 > low) {
+            stk.push(low);
+            stk.push(p - 1);
+        }
+
+        // If there are elements on the right side of the pivot, push them to the stack
+        if (p + 1 < high) {
+            stk.push(p + 1);
+            stk.push(high);
+        }
+    }
+}
+
+int main() {
+    vector<int> arr = {9, 10, 8, 2, 1, 6}; // Input array
+    quicksort(arr, 0, arr.size() - 1);     // Sort the array
+
+    cout << "Sorted array: ";
+    for (int i : arr) cout << i << " "; // Print the sorted array
+    return 0;
+}[0;32m@GanzorigA24 [0m➜ [1;34m/workspaces/csci-330-homeworks-GanzorigA24/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-18 19:10:37+00:00 [COMMAND_EXIT_CODE="0"]
